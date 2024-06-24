@@ -1,6 +1,8 @@
 from KelebekMobilya.pages.constants.globalConstants import *
 from KelebekMobilya.pages.PageBase import PageBase
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
+import time
 
 class HomePage(PageBase):
 
@@ -39,5 +41,19 @@ class HomePage(PageBase):
         actions = ActionChains(self.driver)
         actions.move_to_element(home_office).perform()
 
+       #sayfaları sağa sola kaydırma 
+    def scrolling_pages_left_and_right(self):
+        self.driver.get("https://www.kelebek.com/")
+        swipe_right=self.WaitForElementVisible(SWİPE_RİGHT)   
+        # 15 kez sağa kaydırma
+        for _ in range(15):
+           swipe_right.send_keys(Keys.RIGHT)
+           time.sleep(0.5)  # Her kaydırmadan sonra 0.5 saniye bekle
+        swipe_left=self.WaitForElementVisible(SWİPE_LEFT)  
+        # 15 kez sola kaydırma
+        for _ in range(15):
+           swipe_left.send_keys(Keys.LEFT)
+           time.sleep(0.5)  # Her kaydırmadan sonra 0.5 saniye bekle 
 
-        
+
+

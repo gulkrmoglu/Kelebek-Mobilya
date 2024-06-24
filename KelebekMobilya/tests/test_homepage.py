@@ -13,4 +13,5 @@ class TestHomePage:
     def test_homepage(self):
         self.homepage.homepage_scroll()
         self.homepage.view_top_menus()
+        self.homepage.scrolling_pages_left_and_right()
        
