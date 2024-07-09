@@ -15,3 +15,4 @@ class TestHomePage:
         self.homepage.view_top_menus()
         self.homepage.scrolling_pages_left_and_right()
        
+       
